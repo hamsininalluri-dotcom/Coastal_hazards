@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        REQS: ${REQS:-requirements-lite.txt}   # set REQS=requirements.txt for transformer embeddings
+    command: sh -c "sh scripts/bootstrap.sh && uvicorn src.api.main:app --host 0.0.0.0 --port 8000"
+    environment:
+      HAZARD_EMBEDDER: ${HAZARD_EMBEDDER:-auto}
+      DATABASE_URL: sqlite:////app/data/hazard.db
+    volumes: ["./data:/app/data", "./models:/app/models", "./reports:/app/reports"]
+    ports: ["8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+  ui:
+    build:
+      context: .
+      args:
+        REQS: ${REQS:-requirements-lite.txt}
+    command: streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    ports: ["8501:8501"]

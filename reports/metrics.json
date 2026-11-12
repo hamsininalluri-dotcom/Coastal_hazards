@@ -1,0 +1,626 @@
+{
+ "classification": {
+  "baseline": {
+   "accuracy": 0.970074812967581,
+   "macro_precision": 0.9689166529220958,
+   "macro_recall": 0.9685791687914329,
+   "macro_f1": 0.9684517362993861,
+   "relevance_precision": 1.0,
+   "relevance_recall": 1.0,
+   "relevance_f1": 1.0,
+   "severity_accuracy": 0.8689024390243902,
+   "severity_macro_f1": 0.8564423423936787,
+   "ECE": 0.05941051047122005,
+   "confusion_matrix": [
+    [
+     36,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     46,
+     3,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     48,
+     4,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     2,
+     38,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     37,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     60,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     51,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     73
+    ]
+   ],
+   "labels": [
+    "tsunami",
+    "storm_surge",
+    "flooding",
+    "high_waves",
+    "coastal_erosion",
+    "oil_spill",
+    "cyclone_damage",
+    "not_hazard"
+   ]
+  },
+  "selected": {
+   "accuracy": 0.970074812967581,
+   "macro_precision": 0.9690656565656566,
+   "macro_recall": 0.9685791687914329,
+   "macro_f1": 0.9683241087050618,
+   "relevance_precision": 1.0,
+   "relevance_recall": 1.0,
+   "relevance_f1": 1.0,
+   "severity_accuracy": 0.8719512195121951,
+   "severity_macro_f1": 0.8602024286764979,
+   "ECE": 0.04201881922201189,
+   "confusion_matrix": [
+    [
+     36,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     46,
+     3,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     48,
+     5,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     2,
+     38,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     37,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     60,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     51,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     73
+    ]
+   ],
+   "labels": [
+    "tsunami",
+    "storm_surge",
+    "flooding",
+    "high_waves",
+    "coastal_erosion",
+    "oil_spill",
+    "cyclone_damage",
+    "not_hazard"
+   ]
+  }
+ },
+ "timing": {
+  "baseline": {
+   "train_s": 0.15324530005455017,
+   "predict_ms_per_1000": 17.832169492735975
+  },
+  "selected": {
+   "train_s": 1.5157678999239579,
+   "predict_ms_per_1000": 166.95810476099686
+  }
+ },
+ "embedder": "hash-char-ngram",
+ "duplicates": {
+  "selected_embedding_geo_time": {
+   "precision": 0.8333333333333334,
+   "recall": 1.0,
+   "f1": 0.9090909090909091,
+   "n_pred": 54,
+   "n_true": 45
+  },
+  "baseline_exact_text_geo_time": {
+   "precision": 0.9393939393939394,
+   "recall": 0.6888888888888889,
+   "f1": 0.7948717948717948,
+   "n_pred": 33,
+   "n_true": 45
+  },
+  "tfidf_char_cosine_geo_time": {
+   "precision": 0.8461538461538461,
+   "recall": 0.9777777777777777,
+   "f1": 0.9072164948453608,
+   "n_pred": 52,
+   "n_true": 45
+  }
+ },
+ "duplicate_threshold_sweep": [
+  {
+   "cos_threshold": 0.7,
+   "precision": 0.3383458646616541,
+   "recall": 1.0,
+   "f1": 0.5056179775280898,
+   "n_pred": 133,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.8,
+   "precision": 0.4891304347826087,
+   "recall": 1.0,
+   "f1": 0.6569343065693432,
+   "n_pred": 92,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.85,
+   "precision": 0.6428571428571429,
+   "recall": 1.0,
+   "f1": 0.782608695652174,
+   "n_pred": 70,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.9,
+   "precision": 0.7258064516129032,
+   "recall": 1.0,
+   "f1": 0.8411214953271028,
+   "n_pred": 62,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.92,
+   "precision": 0.75,
+   "recall": 1.0,
+   "f1": 0.8571428571428571,
+   "n_pred": 60,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.95,
+   "precision": 0.8333333333333334,
+   "recall": 1.0,
+   "f1": 0.9090909090909091,
+   "n_pred": 54,
+   "n_true": 45
+  },
+  {
+   "cos_threshold": 0.98,
+   "precision": 0.9333333333333333,
+   "recall": 0.9333333333333333,
+   "f1": 0.9333333333333333,
+   "n_pred": 45,
+   "n_true": 45
+  }
+ ],
+ "clustering": {
+  "oracle_hazard_filter": {
+   "baseline_geohash_6h": {
+    "ARI": 0.6567479573364939,
+    "NMI": 0.9097479420591419,
+    "purity": 0.9968253968253968,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 106,
+    "cluster_count_error": 0.9272727272727272,
+    "abs_cluster_count_error": 0.9272727272727272
+   },
+   "dbscan_combined_distance": {
+    "ARI": 0.9743610978383708,
+    "NMI": 0.9859120126507471,
+    "purity": 1.0,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 66,
+    "cluster_count_error": 0.2,
+    "abs_cluster_count_error": 0.2
+   },
+   "hdbscan_combined_distance": {
+    "ARI": 0.2992061639038057,
+    "NMI": 0.8419247253189149,
+    "purity": 0.9777777777777777,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 140,
+    "cluster_count_error": 1.5454545454545454,
+    "abs_cluster_count_error": 1.5454545454545454
+   }
+  },
+  "end_to_end_predicted_filter": {
+   "baseline_geohash_6h": {
+    "ARI": 0.6567479573364939,
+    "NMI": 0.9097479420591419,
+    "purity": 0.9968253968253968,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 106,
+    "cluster_count_error": 0.9272727272727272,
+    "abs_cluster_count_error": 0.9272727272727272
+   },
+   "dbscan_combined_distance": {
+    "ARI": 0.9743610978383708,
+    "NMI": 0.9859120126507471,
+    "purity": 1.0,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 66,
+    "cluster_count_error": 0.2,
+    "abs_cluster_count_error": 0.2
+   },
+   "hdbscan_combined_distance": {
+    "ARI": 0.2992061639038057,
+    "NMI": 0.8419247253189149,
+    "purity": 0.9777777777777777,
+    "n_true_incidents": 55,
+    "n_pred_clusters": 140,
+    "cluster_count_error": 1.5454545454545454,
+    "abs_cluster_count_error": 1.5454545454545454
+   }
+  }
+ },
+ "clustering_eps_sweep": [
+  {
+   "eps_scale": 0.25,
+   "ARI": 0.1411023947151115,
+   "NMI": 0.8041871618713976,
+   "purity": 1.0,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 225,
+   "cluster_count_error": 3.090909090909091,
+   "abs_cluster_count_error": 3.090909090909091
+  },
+  {
+   "eps_scale": 0.5,
+   "ARI": 0.6941075042383912,
+   "NMI": 0.9017948212601665,
+   "purity": 1.0,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 125,
+   "cluster_count_error": 1.2727272727272727,
+   "abs_cluster_count_error": 1.2727272727272727
+  },
+  {
+   "eps_scale": 0.75,
+   "ARI": 0.928784590736259,
+   "NMI": 0.9671823023677879,
+   "purity": 1.0,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 78,
+   "cluster_count_error": 0.41818181818181815,
+   "abs_cluster_count_error": 0.41818181818181815
+  },
+  {
+   "eps_scale": 1.0,
+   "ARI": 0.9743610978383708,
+   "NMI": 0.9859120126507471,
+   "purity": 1.0,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 66,
+   "cluster_count_error": 0.2,
+   "abs_cluster_count_error": 0.2
+  },
+  {
+   "eps_scale": 1.5,
+   "ARI": 0.9896406485408564,
+   "NMI": 0.9945243939538613,
+   "purity": 0.9968253968253968,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 57,
+   "cluster_count_error": 0.03636363636363636,
+   "abs_cluster_count_error": 0.03636363636363636
+  },
+  {
+   "eps_scale": 2.0,
+   "ARI": 0.9967995107532361,
+   "NMI": 0.9985062309145228,
+   "purity": 0.9968253968253968,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 54,
+   "cluster_count_error": -0.01818181818181818,
+   "abs_cluster_count_error": 0.01818181818181818
+  },
+  {
+   "eps_scale": 3.0,
+   "ARI": 0.9967995107532361,
+   "NMI": 0.9985062309145228,
+   "purity": 0.9968253968253968,
+   "n_true_incidents": 55,
+   "n_pred_clusters": 54,
+   "cluster_count_error": -0.01818181818181818,
+   "abs_cluster_count_error": 0.01818181818181818
+  }
+ ],
+ "relevance_threshold_sweep": [
+  {
+   "threshold": 0.2,
+   "precision": 0.9879518072289156,
+   "recall": 1.0,
+   "f1": 0.9939393939393939
+  },
+  {
+   "threshold": 0.3,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  {
+   "threshold": 0.4,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  {
+   "threshold": 0.5,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  {
+   "threshold": 0.6,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  {
+   "threshold": 0.7,
+   "precision": 1.0,
+   "recall": 0.9847560975609756,
+   "f1": 0.9923195084485407
+  },
+  {
+   "threshold": 0.8,
+   "precision": 1.0,
+   "recall": 0.9847560975609756,
+   "f1": 0.9923195084485407
+  },
+  {
+   "threshold": 0.9,
+   "precision": 1.0,
+   "recall": 0.9847560975609756,
+   "f1": 0.9923195084485407
+  }
+ ],
+ "failure_analysis": {
+  "classification_error_by_edge_case": [
+   {
+    "edge_case": "ambiguous",
+    "n": 19,
+    "error_rate": 0.631578947368421
+   },
+   {
+    "edge_case": "code_mixed",
+    "n": 67,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "conflicting_location",
+    "n": 7,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "hard_negative",
+    "n": 12,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "metaphor",
+    "n": 18,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "missing_location",
+    "n": 10,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "missing_time",
+    "n": 3,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "normal",
+    "n": 159,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "old_news",
+    "n": 6,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "rumour",
+    "n": 22,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "sarcasm",
+    "n": 13,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "short_text",
+    "n": 18,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "typo",
+    "n": 23,
+    "error_rate": 0.0
+   },
+   {
+    "edge_case": "unrelated",
+    "n": 24,
+    "error_rate": 0.0
+   }
+  ],
+  "classification_error_by_language": [
+   {
+    "language": "en",
+    "n": 246,
+    "error_rate": 0.028455284552845527
+   },
+   {
+    "language": "hi",
+    "n": 52,
+    "error_rate": 0.038461538461538464
+   },
+   {
+    "language": "hx",
+    "n": 103,
+    "error_rate": 0.02912621359223301
+   }
+  ],
+  "misclassified_examples": {
+   "ambiguous": [
+    {
+     "text": "URGENT: Veraval के किनारे पानी तेज़ी से बढ़ रहा है. अभी मामूली, नुकसान नहीं",
+     "true": "storm_surge",
+     "pred": "flooding"
+    },
+    {
+     "text": "Update: Dumas के किनारे पानी तेज़ी से बढ़ रहा है. यातायात बंद, लोग निकल रहे हैं",
+     "true": "tsunami",
+     "pred": "flooding"
+    }
+   ]
+  },
+  "clustering": {
+   "true_incidents": 33,
+   "incidents_split_across_clusters": 8,
+   "clusters_merging_incidents": 0,
+   "split_rate_bursty_ge15": 0.25,
+   "split_rate_small_le3": 0.5,
+   "non_hazard_reports_passing_relevance_filter": 0,
+   "split_examples": [
+    {
+     "incident": "INC0002",
+     "sizes": [
+      2,
+      1
+     ]
+    },
+    {
+     "incident": "INC0018",
+     "sizes": [
+      12,
+      1
+     ]
+    },
+    {
+     "incident": "INC0028",
+     "sizes": [
+      2,
+      1
+     ]
+    }
+   ]
+  },
+  "triage": {
+   "test_reports": 401,
+   "sent_to_triage": 13
+  }
+ }
+}
